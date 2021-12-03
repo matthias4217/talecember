@@ -1,0 +1,5 @@
+{% if page.updated or page.date %}
+<div class="updated">
+	{{ trans(key="updated", lang=lang) }} : {% if page.updated %}{{ page.updated }}{% else %}{{ page.date }}{% endif %}
+</div>
+{% endif %}

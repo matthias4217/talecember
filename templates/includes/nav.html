@@ -1,0 +1,61 @@
+<nav>
+	<ul>
+		{% if lang == "fr" %}
+		<li><a href="/">Accueil</a></li>
+		<li><a href="/2021/">Talecember 2021</a></li>
+		<li><a href="/2020/">Talecember 2020</a></li>
+
+		{% elif lang == "en" %}
+		<li><a href="/en/">Home</a></li>
+		<li><a href="/2021/">Talecember 2021</a></li>
+		<li><a href="/2020/">Talecember 2020</a></li>
+		{% endif %}
+
+		{% if page or section %}
+		<li>{{ trans(key = "language", lang=lang) }}:
+			<ul>
+					{% if page %}
+						{% for translation in page.translations %}
+				<li><a href="{{ translation.permalink }}">{{ translation.lang | upper }}</a></li>
+						{% endfor %}
+
+					{% elif section %}
+						{% for translation in section.translations %}
+				<li><a href="{{ translation.permalink }}">{{ translation.lang | upper }}</a></li>
+						{% endfor %}
+
+					{% endif %}
+			</ul>
+		</li>
+
+		{% elif taxonomy %}
+		<li>{{ trans(key = "language", lang=lang) }}:
+			<ul>
+				{% if term %}
+					{% if lang == "en" and taxonomy.name == "kind" and term.name == "fossil" or lang == "fr" and taxonomy.name == "type" and term.name == "fossile" %}
+						<li><a href="/en/kind/fossil/">EN</a></li>
+						<li><a href="/type/fossile/">FR</a></li>
+					{% elif lang == "en" and taxonomy.name == "kind" and term.name == "location" or lang == "fr" and taxonomy.name == "type" and term.name == "lieu" %}
+						<li><a href="/en/kind/location/">EN</a></li>
+						<li><a href="/type/lieu/">FR</a></li>
+					{% endif %}
+				{% else %}
+					{% if lang == "en" and taxonomy.name == "kind" or lang == "fr" and taxonomy.name == "type"%}
+					<li><a href="/en/kind/">EN</a></li>
+					<li><a href="/type/">FR</a></li>
+					{% elif taxonomy.name == "age" %}
+					<li><a href="/en/age/">EN</a></li>
+					<li><a href="/age/">FR</a></li>
+					{% elif taxonomy.name == "tags" %}
+					<li><a href="/en/tags/">EN</a></li>
+					<li><a href="/tags/">FR</a></li>
+					{% elif taxonomy.name == "location" %}
+					<li><a href="/en/location/">EN</a></li>
+					<li><a href="/lieu/">FR</a></li>
+					{%  endif %}
+				{% endif %}
+		</ul>
+		</li>
+		{% endif %}
+	</ul>
+</nav>

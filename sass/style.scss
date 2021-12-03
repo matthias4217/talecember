@@ -1,0 +1,88 @@
+body {
+	font-size: 14px;
+}
+
+header.main-header {
+	width: 95vw;
+	margin: auto;
+}
+
+.middle-body {
+	width: 90vw;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+footer {
+	width: 95vw;
+	margin: auto;
+}
+
+header nav {
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: baseline;
+
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.main-section {
+	width: 70%;
+}
+
+.left-section {
+	width: 12%;
+}
+
+.right-section {
+	width: 12%;
+}
+
+.card-list {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: stretch;
+	align-items: stretch;
+	gap: 1em;
+
+	.card {
+		max-width: 30%;
+		padding: 1em;
+
+		border: 1px solid grey;
+		border-radius: 4px;
+	}
+}
+
+article {
+	taxonomies {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+
+		div {
+			display: inline-block;
+			width: fit-content;
+		}
+	}
+}
+
+p {
+	text-align: justify;
+}
+
+img {
+	width: 100%;
+}
+
+.updated {
+	font-style: italic;
+}
