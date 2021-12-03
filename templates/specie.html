@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ page.title }}</h1>
+
+{% include "includes/last-updated.html" %}
+
+<div class="infobox">
+    <div>
+        {{ trans(key="vernacular_name", lang=lang) }} : <strong>{{ page.title | safe }}</strong>
+    </div>
+{% if page.extra.binomial_name %}
+    <div>
+        {{ trans(key="binomial_name", lang=lang) }} : <em>{{ page.extra.binomial_name | safe }}</em>
+    </div>
+{% endif %}
+
+{% if page.extra.temperature_range %}
+    <div>
+        {{ trans(key="temperature_range", lang=lang) }} : {{ page.extra.temperature_range | safe }}
+    </div>
+{% endif %}
+
+{% if page.extra.humidity %}
+    <div>
+        {{ trans(key="humidity", lang=lang) }} : {{ page.extra.humidity | safe }}
+    </div>
+{% endif %}
+
+{% if page.extra.conservation_status %}
+    <div>
+        {{ trans(key="conservation_status", lang=lang) }} : {{ page.extra.conservation_status | safe }}
+    </div>
+{% endif %}
+
+{% if page.extra.type %}
+    <div>
+        {{ trans(key="type", lang=lang) }} : {{ page.extra.type | safe }}
+    </div>
+{% endif %}
+
+{% if page.extra.header_img %}
+    <div>
+        <img src={{ page.extra.header_img }}>
+    </div>
+{% endif %}
+</div>
+
+<section>
+	{{ page.content | safe }}
+</section>
+
+
+{% endblock content %}

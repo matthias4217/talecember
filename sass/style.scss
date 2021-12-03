@@ -75,6 +75,16 @@ article {
 	}
 }
 
+.infobox {
+	display: flex;
+	flex-flow: column;
+
+	padding: 1em;
+	margin: 2em;
+	border: 1px solid grey;
+	border-radius: 4px;
+}
+
 p {
 	text-align: justify;
 }

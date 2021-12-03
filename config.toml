@@ -22,16 +22,28 @@ highlight_code = true
 generate_feed = true
 
 [languages.fr.translations]
+binomial_name = "Binom"
+conservation_status = "Statut"
 feeds = "Flux"
+humidity = "Humidité"
 language = "Langue"
+temperature_range = "Températures supportées"
 title = "Talecember"
+type = "Type"
 updated = "Dernière mise à jour"
+vernacular_name = "Nom vernaculaire"
 
 [languages.en]
 generate_feed = true
 
 [languages.en.translations]
+binomial_name = "Binomial name"
+conservation_status = "Conservation status"
 feeds = "Feeds"
+humidity = "Humidity"
 language = "Language"
+temperature_range = "Temperature range"
 title = "Talecember"
+type = "Type"
 updated = "Last update"
+vernacular_name = "Vernacular name"
